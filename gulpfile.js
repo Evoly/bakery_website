@@ -27,19 +27,19 @@ gulp.task('clean', function() {
 gulp.task('resources', function() {
   return gulp.src('src/resources/**', {since: gulp.lastRun('resources')})
       .pipe(newer('dist/resources'))
-      .pipe(gulp.dest('dist/resources'));
+      .pipe(gulp.dest('dist/resources'))
 });
 
 gulp.task('page', function() {
-  return gulp.src('src/**.html', {since: gulp.lastRun('page')})
+  return gulp.src('src/index.html', {since: gulp.lastRun('page')})
       .pipe(newer('dist'))
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('dist'))
 });
 
 gulp.task('scripts', function() {
   return gulp.src('src/scripts/**', {since: gulp.lastRun('scripts')})
       .pipe(newer('dist'))
-      .pipe(gulp.dest('dist/scripts'));
+      .pipe(gulp.dest('dist/scripts'))
 });
 
 gulp.task('build', gulp.series(
@@ -48,10 +48,10 @@ gulp.task('build', gulp.series(
 );
 
 gulp.task('watch', function() {
-  gulp.watch('src', gulp.series('sass'));
-  gulp.watch('src/resources/', gulp.series('resources'));
-  gulp.watch('src/', gulp.series('page'));
-  gulp.watch('src/scripts/', gulp.series('scripts'));
+  gulp.watch('src', gulp.series('sass'))
+  gulp.watch('src/resources/', gulp.series('resources'))
+  gulp.watch('src/', gulp.series('page'))
+  gulp.watch('src/scripts/', gulp.series('scripts'))
 });
 
 gulp.task('serve', function() {
