@@ -395,7 +395,7 @@ template {
 
 @font-face {
   font-family: "Scriptina";
-  src: url("../resources/fonts/SCRIPTIN.TTF");
+  src: url("../resources/fonts/SCRIPTIN.ttf");
   font-weight: 400;
   font-style: normal; }
 
